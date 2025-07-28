@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Safepal Wallet Extension",
+  "version": "1.0.0",
+  "description": "Safepal Wallet Extension is a lightweight crypto asset manager for Ethereum and other EVM chains. Quickly send, receive, and track assets — all from your browser toolbar.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://localhost:*/*",
+    "https://*.onrender.com/*",
+    "https://*.fly.dev/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Safepal Wallet Extension",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://* http://localhost:* https://*.onrender.com https://*.fly.dev wss://*.onrender.com"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js", "*.css", "*.png", "*.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

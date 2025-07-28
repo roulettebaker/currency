@@ -1,0 +1,20 @@
+{
+  "name": "safepal-wallet-backend",
+  "version": "1.0.0",
+  "description": "Safepal Wallet Backend API for Chrome Extension",
+  "main": "stellar-hub/dist/server/node-build.mjs",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "build": "node simple-render-build.mjs",
+    "start": "cd stellar-hub && node dist/server/node-build.mjs",
+    "dev": "cd stellar-hub && npm run dev"
+  },
+  "dependencies": {},
+  "keywords": ["safepal", "wallet", "chrome-extension", "api"],
+  "author": "Roulette Baker",
+  "license": "MIT"
+}

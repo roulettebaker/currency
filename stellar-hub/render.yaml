@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: safepal-wallet-backend
+    env: node
+    plan: free  # Change to 'starter' or higher for production
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false  # Set this in Render Dashboard as environment variable
+      - key: MONGODB_DATABASE
+        value: safepal_wallet
+      - key: MONGODB_MAX_POOL_SIZE
+        value: 10
+      - key: MONGODB_SERVER_SELECTION_TIMEOUT
+        value: 5000
+      - key: MONGODB_SOCKET_TIMEOUT
+        value: 45000
+      - key: PING_MESSAGE
+        value: SafePal Wallet API is running on Render
+    # Health check
+    healthCheckPath: /api/health
